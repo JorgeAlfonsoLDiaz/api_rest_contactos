@@ -82,7 +82,7 @@ CREATE TABLE ...
 |8|Version|v1|
 |9|Status Code|200-OK, 201-Created|
 |10|Response type|application/json|
-|11|Response|"version":"v1","message":"Registro capturado","datetime":"25/09/2023 10:25"|
+|11|Response|{"version":"v1","message":"Registro capturado","datetime":"25/09/2023 10:25"}|
 |12|curl|curl -x 'POST' 'http://localhost:8000/contactos' -H 'accept:application/json'|
 |13|Status Code (error)|400-Bad Request|
 |14|Response type (error)|application/json|
@@ -94,18 +94,18 @@ CREATE TABLE ...
 
 |No.|Propiedad|Detalle
 |--|--|--|
-|1|Description|Endpoint raíz de la API.|
-|2|Summary||
-|3|Method||
-|4|Endpoint||
-|5|Query Param||
-|6|Path Param||
-|7|Data||
-|8|Version||
-|9|Status Code||
-|10|Response type||
-|11|Response||
-|12|curl||
+|1|Description|Endpoint para eliminar datos de la API.|
+|2|Summary|Endpoint para eliminar.|
+|3|Method|DELETE|
+|4|Endpoint|http://localhost:8000/contactos/?id_contacto=|
+|5|Query Param|NA|
+|6|Path Param|{id_contacto}|
+|7|Data|NA|
+|8|Version|v1|
+|9|Status Code|200-OK|
+|10|Response type|application/json|
+|11|Response|{"version":"v1","message":"Eliminado con éxito","datetime":"25/09/2023 10:53"}|
+|12|curl|curl -x 'DELETE' 'http://localhost:8000/contactos' -H 'accept:application/json'|
 |13|Status Code (error)||
 |14|Response type (error)||
 |15|Response (error)||
