@@ -31,12 +31,12 @@ CREATE TABLE ...
 |1|Description|Endpoint raíz de la API.|
 |2|Summary|Endpoint raíz|
 |3|Method|GET|
-|4|Endpoint|http:|
-|5|Query Param||
-|6|Path Param||
-|7|Data||
-|8|Version||
-|9|Status Code||
+|4|Endpoint|http://localhost:8000/|
+|5|Query Param|NA|
+|6|Path Param|NA|
+|7|Data|NA|
+|8|Version|v1|
+|9|Status Code|200-OK|
 |10|Response type||
 |11|Response||
 |12|curl||
