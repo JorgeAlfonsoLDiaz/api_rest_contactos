@@ -29,7 +29,7 @@ CREATE TABLE ...
 |No.|Propiedad|Detalle
 |--|--|--|
 |1|Description|Endpoint raíz de la API.|
-|2|Summary|Endpoint raíz|
+|2|Summary|Endpoint raíz.|
 |3|Method|GET|
 |4|Endpoint|http://localhost:8000/|
 |5|Query Param|NA|
@@ -37,12 +37,12 @@ CREATE TABLE ...
 |7|Data|NA|
 |8|Version|v1|
 |9|Status Code|200-OK|
-|10|Response type||
-|11|Response||
-|12|curl||
-|13|Status Code (error)||
-|14|Response type (error)||
-|15|Response (error)||
+|10|Response type|application/json|
+|11|Response|{"version":"v1","message":"Endpointraíz","datetime":"21/09/2023 10:16"}|
+|12|curl|curl -x 'GET' 'http://localhost:8000/' -H 'accept:application/json'|
+|13|Status Code (error)|NA|
+|14|Response type (error)|NA|
+|15|Response (error)|NA|
 
 
 ### 4.2 GET - http://localhost:8000/contactos
@@ -50,17 +50,17 @@ CREATE TABLE ...
 
 |No.|Propiedad|Detalle
 |--|--|--|
-|1|Description|Endpoint raíz de la API.|
-|2|Summary||
-|3|Method||
-|4|Endpoint||
-|5|Query Param||
-|6|Path Param||
-|7|Data||
-|8|Version||
-|9|Status Code||
-|10|Response type||
-|11|Response||
+|1|Description|Endpoint para consultar datos de la API.|
+|2|Summary|Endpoint para consulta.|
+|3|Method|GET|
+|4|Endpoint|http://localhost:8000/contactos|
+|5|Query Param|NA|
+|6|Path Param|NA|
+|7|Data|NA|
+|8|Version|v1|
+|9|Status Code|200-OK|
+|10|Response type|application/json|
+|11|Response|{"version":"v1","message":"Consultar contactos","datetime":"25/09/2023 10:04"}|
 |12|curl||
 |13|Status Code (error)||
 |14|Response type (error)||
