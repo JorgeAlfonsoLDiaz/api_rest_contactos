@@ -61,10 +61,10 @@ CREATE TABLE ...
 |9|Status Code|200-OK|
 |10|Response type|application/json|
 |11|Response|{"version":"v1","message":"Consultar contactos","datetime":"25/09/2023 10:04"}|
-|12|curl||
-|13|Status Code (error)||
-|14|Response type (error)||
-|15|Response (error)||
+|12|curl|curl -x 'GET' 'http://localhost:8000/contactos' -H 'accept:application/json'|
+|13|Status Code (error)|400-Bad Request, 404-Not Found|
+|14|Response type (error)|application/json|
+|15|Response (error)|{"error":"Error al realizar la consulta"}|
 
 
 ### 4.3 POST - http://localhost:8000/contactos
@@ -72,21 +72,21 @@ CREATE TABLE ...
 
 |No.|Propiedad|Detalle
 |--|--|--|
-|1|Description|Endpoint raíz de la API.|
-|2|Summary||
-|3|Method||
-|4|Endpoint||
-|5|Query Param||
-|6|Path Param||
-|7|Data||
-|8|Version||
-|9|Status Code||
-|10|Response type||
-|11|Response||
-|12|curl||
-|13|Status Code (error)||
-|14|Response type (error)||
-|15|Response (error)||
+|1|Description|Endpoint para enviar datos a la API.|
+|2|Summary|Endpoint para enviar datos.|
+|3|Method|POST|
+|4|Endpoint|http://localhost:8000/contactos|
+|5|Query Param|NA|
+|6|Path Param|NA|
+|7|Data|{"id_contacto":int,"nombre":string,"primer_apellido":string,"segundo_apellido":string,"email":string,"telefono":string}|
+|8|Version|v1|
+|9|Status Code|200-OK, 201-Created|
+|10|Response type|application/json|
+|11|Response|"version":"v1","message":"Registro capturado","datetime":"25/09/2023 10:25"|
+|12|curl|curl -x 'POST' 'http://localhost:8000/contactos' -H 'accept:application/json'|
+|13|Status Code (error)|400-Bad Request|
+|14|Response type (error)|application/json|
+|15|Response (error)|{"error":"No se pudo insertar el registro"}|
 
 
 ### 4.4 DELETE - http://localhost:8000/contactos
