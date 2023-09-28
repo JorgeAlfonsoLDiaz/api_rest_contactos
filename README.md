@@ -20,3 +20,114 @@ Para este ejemplo se utilizará el gestor de bases de datos [SQLite3](https://sq
 ´´´sql
 CREATE TABLE ...
 ´´´
+
+## 4. Diseño de la API
+
+### 4.1 GET - http://localhost:8000/
+
+
+|No.|Propiedad|Detalle
+|--|--|--|
+|1|Description|Endpoint raíz de la API.|
+|2|Summary|Endpoint raíz|
+|3|Method|GET|
+|4|Endpoint|http:|
+|5|Query Param||
+|6|Path Param||
+|7|Data||
+|8|Version||
+|9|Status Code||
+|10|Response type||
+|11|Response||
+|12|curl||
+|13|Status Code (error)||
+|14|Response type (error)||
+|15|Response (error)||
+
+
+### 4.2 GET - http://localhost:8000/contactos
+
+
+|No.|Propiedad|Detalle
+|--|--|--|
+|1|Description|Endpoint raíz de la API.|
+|2|Summary||
+|3|Method||
+|4|Endpoint||
+|5|Query Param||
+|6|Path Param||
+|7|Data||
+|8|Version||
+|9|Status Code||
+|10|Response type||
+|11|Response||
+|12|curl||
+|13|Status Code (error)||
+|14|Response type (error)||
+|15|Response (error)||
+
+
+### 4.3 POST - http://localhost:8000/contactos
+
+
+|No.|Propiedad|Detalle
+|--|--|--|
+|1|Description|Endpoint raíz de la API.|
+|2|Summary||
+|3|Method||
+|4|Endpoint||
+|5|Query Param||
+|6|Path Param||
+|7|Data||
+|8|Version||
+|9|Status Code||
+|10|Response type||
+|11|Response||
+|12|curl||
+|13|Status Code (error)||
+|14|Response type (error)||
+|15|Response (error)||
+
+
+### 4.4 DELETE - http://localhost:8000/contactos
+
+
+|No.|Propiedad|Detalle
+|--|--|--|
+|1|Description|Endpoint raíz de la API.|
+|2|Summary||
+|3|Method||
+|4|Endpoint||
+|5|Query Param||
+|6|Path Param||
+|7|Data||
+|8|Version||
+|9|Status Code||
+|10|Response type||
+|11|Response||
+|12|curl||
+|13|Status Code (error)||
+|14|Response type (error)||
+|15|Response (error)||
+
+
+### 4.5 PUT - http://localhost:8000/contactos
+
+
+|No.|Propiedad|Detalle
+|--|--|--|
+|1|Description|Endpoint raíz de la API.|
+|2|Summary||
+|3|Method||
+|4|Endpoint||
+|5|Query Param||
+|6|Path Param||
+|7|Data||
+|8|Version||
+|9|Status Code||
+|10|Response type||
+|11|Response||
+|12|curl||
+|13|Status Code (error)||
+|14|Response type (error)||
+|15|Response (error)||
