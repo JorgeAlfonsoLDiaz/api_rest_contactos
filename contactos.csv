@@ -1,3 +1,5 @@
-id_contactos,nombre,primer_apellido,segundo_apellido,telefono,email
-1,Chere,Duke,Blevins,3270874070,clinical2085@example.org
-2,Philip,West,Rush,5718099780,inc1801@outlook.com
+id_contactos,nombre,primer_apellido,segundo_apellido,email,telefono
+1,Chere,Duke,Blevins,clinical2085@example.org,3270874070
+2,Philip,West,Rush,inc1801@outlook.com,57180997803
+4,pablo,pablo,baplo,pablo@pmail.com,123456789
+3,nombre,apellido,apellido,a@gmail.com,1789343
