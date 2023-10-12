@@ -26,7 +26,7 @@ CREATE TABLE ...
 ### 4.1 GET - http://localhost:8000/
 
 
-|No.|Propiedad|Detalle
+|No.|Propiedad|Detalle|
 |--|--|--|
 |1|Description|Endpoint raíz de la API.|
 |2|Summary|Endpoint raíz.|
@@ -48,13 +48,13 @@ CREATE TABLE ...
 ### 4.2 GET - http://localhost:8000/contactos
 
 
-|No.|Propiedad|Detalle
+|No.|Propiedad|Detalle|
 |--|--|--|
 |1|Description|Endpoint para consultar datos de la API.|
 |2|Summary|Endpoint para consulta.|
 |3|Method|GET|
 |4|Endpoint|http://localhost:8000/contactos|
-|5|Query Param|NA|
+|5|Query Param|id_contacto|
 |6|Path Param|NA|
 |7|Data|NA|
 |8|Version|v1|
@@ -70,7 +70,7 @@ CREATE TABLE ...
 ### 4.3 POST - http://localhost:8000/contactos
 
 
-|No.|Propiedad|Detalle
+|No.|Propiedad|Detalle|
 |--|--|--|
 |1|Description|Endpoint para enviar datos a la API.|
 |2|Summary|Endpoint para enviar datos.|
@@ -92,7 +92,7 @@ CREATE TABLE ...
 ### 4.4 DELETE - http://localhost:8000/contactos
 
 
-|No.|Propiedad|Detalle
+|No.|Propiedad|Detalle|
 |--|--|--|
 |1|Description|Endpoint para eliminar datos de la API.|
 |2|Summary|Endpoint para eliminar.|
@@ -114,7 +114,7 @@ CREATE TABLE ...
 ### 4.5 PUT - http://localhost:8000/contactos
 
 
-|No.|Propiedad|Detalle
+|No.|Propiedad|Detalle|
 |--|--|--|
 |1|Description|Endpoint para actualizar datos de la API.|
 |2|Summary|Endpoint para actualizar.|
