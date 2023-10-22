@@ -1,10 +1,13 @@
 import csv
 import json
+import os
+import shutil
 
-from typing import Union
-from typing import List
+from typing import Union, List, Tuple
+from PIL import Image
+from PIL import ImageOps
 
-from fastapi import FastAPI, Request, File, UploadFile
+from fastapi import FastAPI, Request, File, UploadFile, Query
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -85,9 +88,8 @@ async def delete_contacto(id_contactos: int):
     return {"message":"Registro eliminado correctamente."}
 
 
-@app.get("/v1/contactos/", description="Endpoint para consultar datos de la API según su nombre", summary="Endpoint de búsqueda.", response_model=List[Contacto], status_code=200)  #   // --- // Endpoint GET contacto (por nombre) \\ --- \\
-async def get_contacto(request: Request):
-    nombre = request.query_parameters.get("nombre")
+@app.get("/v1/contactos/{nombre}", description="Endpoint para consultar datos de la API según su nombre", summary="Endpoint de búsqueda.", response_model=List[Contacto], status_code=200)  #   // --- // Endpoint GET contacto (por nombre) \\ --- \\
+async def get_contacto1(nombre: str):
 
     file_csv = "contactos.csv"
     response = []
@@ -101,7 +103,7 @@ async def get_contacto(request: Request):
 
 
 
-@app.post("/v1/imagenes",description="Endpoint para subir una imagen a la API.", summary="Endpoint para imagen.", status_code=200)
+@app.post("/v1/imagenes",description="Endpoint para subir una imagen a la API.", summary="Endpoint para imagen.", status_code=201)  #   // --- // Endpoint POST imagen \\ --- \\
 async def post_imagen(imagen: UploadFile = File(...)):
     image_dir = "static/images"
 
@@ -109,5 +111,45 @@ async def post_imagen(imagen: UploadFile = File(...)):
         os.makedirs(image_dir)
 
     file = imagen.filename
+    file_path = os.path.join(image_dir, file)
 
+    with open(file_path, "wb") as new_file:
+        shutil.copyfileobj(imagen.file, new_file)
+
+    return {"message":"Imagen guardada correctamente"}
+
+
+@app.get("/v1/imagenes",description="Endpoint para ver una imagen de la API con un efecto.", summary="Endpoint para efecto de imagen.", status_code=200)  #   // --- // Endpoint GET imagen \\ --- \\
+async def get_imagen(
+    crop: Tuple[int, int, int, int] = Query(None, description="Valores para crop"),
+    fliph: bool = Query(False, description="Voltear horizontalmente la imagen"),
+    rotate: int = Query(None, description="Rotar la imagen")
+):
+    image_dir = "static/images"
+
+    if not os.path.exists(image_dir):
+        return {"error": "No se encontró la imagen"}
     
+    files = os.listdir(image_dir)
+    if not files:
+        return {"error": "No se encontró la imagen"}
+    
+    file_path = os.path.join(image_dir, files[0])
+
+    im = Image.open(file_path)
+    if crop:
+        x1, y1, x2, y2 = crop
+        im = im.crop((x1, y1, x2, y2))
+        pass
+
+    if fliph:
+        im = im.transpose(Image.FLIP_LEFT_RIGHT)
+        pass
+    
+    if rotate is not None:
+        im = im.rotate(rotate)
+        pass
+    
+    im.save("static/images/imagen1.png")
+
+    return {"message": "Efecto aplicado"}
