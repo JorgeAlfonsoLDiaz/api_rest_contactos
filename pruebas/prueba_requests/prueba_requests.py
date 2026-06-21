@@ -1,6 +1,6 @@
 import requests
 
-URI = "https://8000-jorgealfons-apirestcont-yqr0t77hf89.ws-us105.gitpod.io/v1/contactos"
+URI = "API_Ejemplo"
 
 response = requests.get(URI)
 
